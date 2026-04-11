@@ -1,7 +1,8 @@
 import { ArrowRight, FileText } from "lucide-react";
 
-const HERO_BG = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/8caef33c4908b3ff62392a483ddf228739c5f25b9037e860afdb17dc1c3b2ad2.png";
-const HERO_BG_2 = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/9e472f0ed73944846cd888a2bc5f5b06620ec625fe9cbbb9629fbb8ce172e937.png";
+const HERO_BG = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/5faebf7866fce2b9c543fbfb1decfe2c9130d28e1a0c8e7951d3e837e8c99037.png";
+const HERO_BIKE_RESTAURANT = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/ffb78f631bd5195788fa6815f70c37786fe2bea2de7d365ab0494a71c3266635.png";
+const HERO_TWO_BIKES = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/042a2da3ceed0a17ff340758cd961012621a162b87a2c8d0ac2f4db8254a5f9e.png";
 
 const HeroSection = ({ onPitchDeck, onWaitlist }) => {
   return (
@@ -10,24 +11,33 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
       data-testid="hero-section"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Images with overlay */}
+      {/* Background: Clean Lagos street with Mealtap delivery bike */}
       <div className="absolute inset-0">
         <img
           src={HERO_BG}
-          alt="Lagos vibrant street food scene"
+          alt="Mealtap delivery rider on clean Lagos street at golden hour"
           className="absolute inset-0 w-full h-full object-cover"
           data-testid="hero-bg-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#2D5A27]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#2D5A27]/70" />
       </div>
 
-      {/* Floating accent image */}
-      <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-72 opacity-20 animate-float">
-        <img
-          src={HERO_BG_2}
-          alt="Lagos aerial"
-          className="rounded-3xl"
-        />
+      {/* Floating side images - restaurant & bikes */}
+      <div className="hidden xl:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col gap-4 z-10">
+        <div className="w-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 animate-float opacity-90">
+          <img
+            src={HERO_BIKE_RESTAURANT}
+            alt="Mealtap branded delivery bike at restaurant"
+            className="w-full h-36 object-cover"
+          />
+        </div>
+        <div className="w-56 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 animate-float delay-300 opacity-90">
+          <img
+            src={HERO_TWO_BIKES}
+            alt="Two Mealtap delivery bikes on Lagos street"
+            className="w-full h-36 object-cover"
+          />
+        </div>
       </div>
 
       {/* Content */}

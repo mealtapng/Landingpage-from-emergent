@@ -1,6 +1,6 @@
 import { ArrowRight, FileText, Mail, MapPin } from "lucide-react";
 
-const HERO_BG_2 = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/9e472f0ed73944846cd888a2bc5f5b06620ec625fe9cbbb9629fbb8ce172e937.png";
+const HERO_BG_2 = "https://static.prod-images.emergentagent.com/jobs/8b49ced4-32db-480d-a907-c48e75ac672e/images/042a2da3ceed0a17ff340758cd961012621a162b87a2c8d0ac2f4db8254a5f9e.png";
 
 const CTAFooter = ({ onPitchDeck, onWaitlist }) => {
   return (
