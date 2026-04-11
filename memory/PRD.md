@@ -31,7 +31,7 @@ Build a Mealtap Technologies landing page from scratch with:
 
 ## What's Been Implemented (Jan 2026)
 - [x] Full landing page with 8 sections (Hero, Problem, Solution, How It Works, Market Stats, Business Model, Team, CTA/Footer)
-- [x] Lagos-inspired AI-generated hero background images
+- [x] Lagos-inspired AI-generated hero background images (v2: clean delivery bikes with MEALTAP branding, restaurant scenes)
 - [x] Request Pitch Deck modal form (Full Name, Email, Phone, Organisation, Role, Reason, Interest, How did you hear)
 - [x] Join Waitlist modal form (Full Name, Email, Phone, Company, Why Mealtap)
 - [x] Backend API endpoints for form submissions (POST + GET for both forms)
