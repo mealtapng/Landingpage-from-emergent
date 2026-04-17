@@ -27,7 +27,6 @@ const TeamSection = () => {
   return (
     <section id="team" data-testid="team-section" className="py-24 bg-[#F5F5F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-[#C8622A] font-semibold text-sm tracking-widest uppercase mb-3">
             The Founder
@@ -41,17 +40,15 @@ const TeamSection = () => {
           </h2>
         </div>
 
-        {/* Founder Card */}
         <div className="max-w-4xl mx-auto" data-testid="founder-card">
           <div className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-5">
-              {/* Left: Info */}
               <div className="md:col-span-2 bg-[#2D5A27] p-8 flex flex-col justify-center text-center md:text-left">
                 <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto md:mx-0 mb-4 text-white text-2xl font-extrabold" style={{ fontFamily: "Montserrat" }}>
-                  AM
+                  CM
                 </div>
-                <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "Montserrat" }}>
-                  Atolagbe Michael O.
+                <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "Montserrat" }} data-testid="founder-name">
+                  Chef Mike
                 </h3>
                 <p className="text-[#C8622A] font-semibold text-sm mb-3">Founder & CEO</p>
                 <p className="text-white/70 text-sm leading-relaxed">
@@ -60,7 +57,6 @@ const TeamSection = () => {
                 </p>
               </div>
 
-              {/* Right: Skills */}
               <div className="md:col-span-3 p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {skills.map((s, i) => (

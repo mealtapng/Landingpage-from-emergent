@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const Navbar = ({ onPitchDeck, onWaitlist }) => {
+const Navbar = ({ onPitchDeck, onWaitlist, isInvestor }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -11,13 +13,21 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Problem", href: "#problem" },
-    { label: "Solution", href: "#solution" },
+  const publicLinks = [
     { label: "How It Works", href: "#how-it-works" },
-    { label: "Market", href: "#market" },
+    { label: "User Flows", href: "#user-flows" },
+    { label: "Brand", href: "#brand" },
     { label: "Team", href: "#team" },
   ];
+
+  const investorLinks = [
+    { label: "Problem", href: "#problem" },
+    { label: "Market", href: "#market" },
+    { label: "Business Model", href: "#business-model" },
+    { label: "Team", href: "#team" },
+  ];
+
+  const navLinks = isInvestor ? investorLinks : publicLinks;
 
   return (
     <nav
@@ -29,18 +39,16 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2" data-testid="navbar-logo">
+        <a href="/" className="flex items-center gap-2" data-testid="navbar-logo">
           <span
             className="text-2xl font-extrabold tracking-tight"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             <span className={scrolled ? "text-[#2D5A27]" : "text-white"}>MEAL</span>
-            <span className={scrolled ? "text-[#C8622A]" : "text-[#C8622A]"}>TAP</span>
+            <span className="text-[#C8622A]">TAP</span>
           </span>
         </a>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -54,6 +62,30 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
               {link.label}
             </a>
           ))}
+
+          {!isInvestor && (
+            <a
+              href="/investors"
+              data-testid="nav-investors-link"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-[#C8622A] ${
+                scrolled ? "text-gray-700" : "text-white/90"
+              }`}
+            >
+              For Investors
+            </a>
+          )}
+          {isInvestor && (
+            <a
+              href="/"
+              data-testid="nav-public-link"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-[#C8622A] ${
+                scrolled ? "text-gray-700" : "text-white/90"
+              }`}
+            >
+              Public Page
+            </a>
+          )}
+
           <button
             data-testid="nav-pitch-deck-btn"
             onClick={onPitchDeck}
@@ -70,7 +102,6 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           data-testid="mobile-menu-toggle"
           className="md:hidden p-2"
@@ -84,7 +115,6 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-white shadow-xl rounded-b-2xl mx-4 mt-2 p-6 animate-fade-in" data-testid="mobile-menu">
           <div className="flex flex-col gap-4">
@@ -98,6 +128,15 @@ const Navbar = ({ onPitchDeck, onWaitlist }) => {
                 {link.label}
               </a>
             ))}
+            {!isInvestor ? (
+              <a href="/investors" className="text-[#C8622A] font-semibold py-2" onClick={() => setMobileOpen(false)}>
+                For Investors
+              </a>
+            ) : (
+              <a href="/" className="text-[#2D5A27] font-semibold py-2" onClick={() => setMobileOpen(false)}>
+                Public Page
+              </a>
+            )}
             <hr className="my-2 border-gray-200" />
             <button
               data-testid="mobile-pitch-deck-btn"
