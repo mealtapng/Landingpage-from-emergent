@@ -94,11 +94,11 @@ const CTAFooter = ({ onPitchDeck, onWaitlist }) => {
                 </div>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                   <Mail size={14} />
-                  hello@mealtap.ng
+                  hello@mealtap.com.ng
                 </div>
               </div>
               <p className="text-gray-500 text-xs mt-4">
-                Gotref Technologies Nig Ltd
+                Mealtap Technology Limited
               </p>
             </div>
           </div>

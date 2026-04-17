@@ -57,7 +57,7 @@ const TeamSection = () => {
                 <p className="text-[#C8622A] font-semibold text-sm mb-3">Founder & CEO</p>
                 <p className="text-white/70 text-sm leading-relaxed">
                   Entrepreneur, web developer, and chef based in Abuja, Nigeria.
-                  Founder of Gotref Technologies Nig Ltd.
+                  Founder of Mealtap Technology Limited.
                 </p>
               </div>
 
@@ -79,7 +79,7 @@ const TeamSection = () => {
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <p className="text-gray-600 text-sm">
-                    <span className="font-semibold text-[#2D5A27]">Parent Company:</span> Gotref Technologies Nig Ltd (CAC Registered)
+                    <span className="font-semibold text-[#2D5A27]">Parent Company:</span> Mealtap Technology Limited (CAC Registered)
                   </p>
                   <p className="text-gray-600 text-sm mt-1">
                     <span className="font-semibold text-[#2D5A27]">Location:</span> Abuja, Federal Capital Territory, Nigeria
