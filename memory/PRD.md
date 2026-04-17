@@ -1,59 +1,49 @@
 # Mealtap Technologies - Landing Page PRD
 
 ## Original Problem Statement
-Build a Mealtap Technologies landing page from scratch with:
-- Lagos, Nigeria-inspired background pictures in hero section
-- "Request Pitch Deck" button with modal popup form
-- "Join the Waitlist" button with modal popup form
-- All forms collected by Netlify (+ MongoDB storage for preview)
-- Full landing page: Hero, Problem, Solution, How It Works, Market Stats, Business Model, Team, CTA/Footer
+Build a Mealtap Technologies landing page with Lagos-inspired hero, "Request Pitch Deck" and "Join the Waitlist" modal forms, Netlify form collection + MongoDB storage.
 
 ## Architecture
-- **Frontend**: React 19 + Tailwind CSS + Lucide React icons
+- **Frontend**: React 19 + Tailwind CSS + Lucide React icons + React Router
 - **Backend**: FastAPI + MongoDB (Motor async driver)
 - **Database**: MongoDB (collections: pitch_deck_requests, waitlist_requests)
 - **Fonts**: Montserrat (headings), Poppins (body) via Google Fonts
 - **Brand Colors**: Forest Green #2D5A27, Terracotta #C8622A, White #FFFFFF, Off White #F5F5F0
 
-## User Personas
-1. **Investors** - Looking at the pitch deck for investment opportunities
-2. **Strategic Partners** - Potential co-founders or tech partners
-3. **Early Adopters** - Waitlist users wanting early access to Mealtap
-4. **Press/Media** - Journalists covering Nigerian tech startups
-
-## Core Requirements
-- Hero section with Lagos-inspired AI-generated background imagery
-- Two CTAs: "Request Pitch Deck" and "Join the Waitlist"
-- Modal forms with specific fields per user specification
-- MongoDB storage + Netlify form markup (data-netlify="true")
-- Responsive design (desktop + mobile)
-- Smooth scroll navigation between sections
-
 ## What's Been Implemented (Jan 2026)
-- [x] Full landing page with 8 sections (Hero, Problem, Solution, How It Works, Market Stats, Business Model, Team, CTA/Footer)
-- [x] Lagos-inspired AI-generated hero background images (v2: clean delivery bikes with MEALTAP branding, restaurant scenes)
-- [x] Request Pitch Deck modal form (Full Name, Email, Phone, Organisation, Role, Reason, Interest, How did you hear)
-- [x] Join Waitlist modal form (Full Name, Email, Phone, Company, Why Mealtap)
-- [x] Backend API endpoints for form submissions (POST + GET for both forms)
-- [x] MongoDB storage for all submissions
-- [x] Netlify form attributes (data-netlify="true") for production deployment
-- [x] Responsive navbar with mobile hamburger menu
-- [x] Brand identity: Mealtap colors, Montserrat + Poppins typography
-- [x] Animations and micro-interactions
 
-## Backlog / Next Tasks
-### P0 (Critical)
-- None (all core features implemented)
+### Iteration 1 - MVP
+- [x] Full landing page with 8 sections
+- [x] Lagos-inspired AI-generated hero backgrounds
+- [x] Two modal forms (Pitch Deck + Waitlist) with MongoDB + Netlify markup
+- [x] Backend API endpoints
 
-### P1 (High Priority)
-- Add real Mealtap logo (SVG with chat bubble + handlebars + steaming bowl)
-- Add email notification when form is submitted
-- SEO meta tags optimization
+### Iteration 2 - Hero Image Update
+- [x] Replaced busy market with clean Mealtap-branded delivery bike images
 
-### P2 (Nice to Have)
-- WhatsApp button linking to Mealtap's WhatsApp number
-- Analytics tracking (Google Analytics / Mixpanel)
-- A/B testing on CTA button copy
-- Blog section for content marketing
-- Video demo of WhatsApp ordering flow
-- Testimonials/social proof section
+### Iteration 3 - Major Restructure (Client Corrections)
+- [x] **Renamed** "Atolagbe Michael O." to "Chef Mike"
+- [x] **Separated** investor data to dedicated `/investors` page
+- [x] **Removed** Jumia/Bolt/Chowdeck competition text from public page
+- [x] **Integrated** WhatsApp flow screenshots (12, 13, 14) into "How It Works" section
+- [x] **Added** User Flow diagrams (Customer, Vendor, Rider) with tab switcher
+- [x] **Added** Brand Showcase section (billboard, signage, delivery bag images)
+- [x] **Updated** hero tagline to "Your favorite meals are just one chat away"
+- [x] **Added** phone number 0908 112 2220
+- [x] **Created** Investor Page with Problem, Market, Business Model, Team sections
+- [x] **Updated** navigation with "For Investors" / "Public Page" links
+
+### Page Structure
+**Public Page (/):** Hero > How It Works (WhatsApp screenshots) > User Flows (tabs) > Brand Showcase > Team (Chef Mike) > CTA/Footer
+**Investor Page (/investors):** Hero > Problem (stats) > Market > Business Model > Team > CTA
+
+## Backlog
+### P1
+- Add real Mealtap SVG logo
+- Email notifications on form submission
+- SEO meta tags
+
+### P2
+- Floating WhatsApp button
+- Analytics integration
+- Video demo of ordering flow
