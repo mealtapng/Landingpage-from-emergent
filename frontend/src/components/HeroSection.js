@@ -34,7 +34,7 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-in-up" data-testid="hero-badge">
           <span className="w-2 h-2 rounded-full bg-[#C8622A] animate-pulse" />
           <span className="text-white/90 text-sm font-medium">
-            Launching Soon in Abuja, Nigeria
+            Launching Soon
           </span>
         </div>
 
@@ -43,16 +43,13 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
           style={{ fontFamily: "Montserrat, sans-serif" }}
           data-testid="hero-headline"
         >
-          Your favorite meals are just{" "}
-          <span className="text-[#C8622A]">one chat</span> away
+          Order Food by Sending a{" "}
+          <span className="text-[#C8622A]">WhatsApp</span> Message
         </h1>
 
-        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200 leading-relaxed" data-testid="hero-subheadline">
-          Order food on WhatsApp. No app download required. Stress free.
-        </p>
-
-        <p className="text-white/60 text-base mb-10 animate-fade-in-up delay-200">
-          Call or WhatsApp: <span className="text-[#C8622A] font-semibold">0908 112 2220</span>
+        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed" data-testid="hero-subheadline">
+          Mealtap is a WhatsApp-native food ordering and delivery platform for Nigerian cities.
+          No app download. No account creation. Just message and eat.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
@@ -72,6 +69,26 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
             Join the Waitlist
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
+        </div>
+
+        {/* Key Stats Bar */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in-up delay-500">
+          {[
+            { value: "$1.04B", label: "Market Size" },
+            { value: "95%", label: "WhatsApp Penetration" },
+            { value: "8%", label: "Current Delivery Reach" },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-6 py-5 text-center"
+              data-testid={`hero-stat-${stat.label.toLowerCase().replace(/\s/g, "-")}`}
+            >
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#C8622A]" style={{ fontFamily: "Montserrat" }}>
+                {stat.value}
+              </div>
+              <div className="text-white/70 text-sm mt-1">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
 

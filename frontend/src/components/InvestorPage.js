@@ -58,6 +58,8 @@ const founderSkills = [
   { icon: <MapPin size={20} />, title: "Abuja Native", desc: "Lives in the launch market, understands the food culture deeply." },
 ];
 
+const CHEF_MIKE_PHOTO = "https://customer-assets.emergentagent.com/job_lagos-hero-pitch/artifacts/6861ez2r_1ad1cb24-86ef-40f7-8f59-9933f756f90d.JPG";
+
 const InvestorPage = ({ onPitchDeck, onWaitlist }) => {
   return (
     <>
@@ -204,7 +206,7 @@ const InvestorPage = ({ onPitchDeck, onWaitlist }) => {
             <div className="bg-[#F5F5F0] rounded-3xl overflow-hidden border border-gray-100 shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-5">
                 <div className="md:col-span-2 bg-[#2D5A27] p-8 flex flex-col justify-center text-center md:text-left">
-                  <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto md:mx-0 mb-4 text-white text-2xl font-extrabold" style={{ fontFamily: "Montserrat" }}>CM</div>
+                  <img src={CHEF_MIKE_PHOTO} alt="Chef Mike" className="w-20 h-20 rounded-full object-cover mx-auto md:mx-0 mb-4 border-2 border-white/30" />
                   <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "Montserrat" }}>Chef Mike</h3>
                   <p className="text-[#C8622A] font-semibold text-sm mb-3">Founder & CEO</p>
                   <p className="text-white/70 text-sm leading-relaxed">Entrepreneur, web developer, and chef based in Abuja, Nigeria. Founder of Gotref Technologies Nig Ltd.</p>
