@@ -14,7 +14,26 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
+        <!-- Hidden Netlify forms for bot detection at build time -->
+    <form name="pitch-deck-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="full_name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="organisation" />
+      <input type="text" name="role_title" />
+      <input type="text" name="request_reason" />
+      <textarea name="more_about_interest"></textarea>
+      <input type="text" name="heard_about" />
+    </form>
+    <form name="waitlist-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="full_name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <textarea name="why_mealtap"></textarea>
+    </form>
+
+    <div id="root"></div>
         <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
