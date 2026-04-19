@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhatsAppFlowSection from "@/components/WhatsAppFlowSection";
 import UserFlowsSection from "@/components/UserFlowsSection";
-import BrandShowcase from "@/components/BrandShowcase";
 import TeamSection from "@/components/TeamSection";
 import CTAFooter from "@/components/CTAFooter";
 import InvestorPage from "@/components/InvestorPage";
@@ -28,7 +27,6 @@ const PublicPage = () => {
       />
       <WhatsAppFlowSection />
       <UserFlowsSection />
-      <BrandShowcase />
       <TeamSection />
       <CTAFooter
         onPitchDeck={() => setPitchModalOpen(true)}
