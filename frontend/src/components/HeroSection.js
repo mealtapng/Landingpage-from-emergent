@@ -9,7 +9,7 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0">
         <img
@@ -30,8 +30,8 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-28 pb-20">
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-in-up" data-testid="hero-badge">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-24 pb-12 sm:pt-28 sm:pb-20">
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-6 sm:mb-8 animate-fade-in-up" data-testid="hero-badge">
           <span className="w-2 h-2 rounded-full bg-[#C8622A] animate-pulse" />
           <span className="text-white/90 text-sm font-medium">
             Launching Soon
@@ -39,7 +39,7 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up delay-100"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] sm:leading-tight mb-5 sm:mb-6 animate-fade-in-up delay-100"
           style={{ fontFamily: "Montserrat, sans-serif" }}
           data-testid="hero-headline"
         >
@@ -47,16 +47,16 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
           <span className="text-[#C8622A]">WhatsApp</span> Message
         </h1>
 
-        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200 leading-relaxed" data-testid="hero-subheadline">
+        <p className="text-base sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 sm:mb-10 animate-fade-in-up delay-200 leading-relaxed" data-testid="hero-subheadline">
           Mealtap is a WhatsApp-native food ordering and delivery platform for Nigerian cities.
           No app download. No account creation. Just message and eat.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in-up delay-300">
           <button
             data-testid="hero-pitch-deck-btn"
             onClick={onPitchDeck}
-            className="group flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white font-semibold text-base hover:bg-white hover:text-[#2D5A27] transition-all duration-300"
+            className="group flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white font-semibold text-base hover:bg-white hover:text-[#2D5A27] transition-all duration-300"
           >
             <FileText size={18} />
             Request Pitch Deck
@@ -64,7 +64,7 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
           <button
             data-testid="hero-waitlist-btn"
             onClick={onWaitlist}
-            className="group flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8622A] text-white font-semibold text-base hover:bg-[#A84F1F] transition-all duration-300 animate-pulse-glow"
+            className="group flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#C8622A] text-white font-semibold text-base hover:bg-[#A84F1F] transition-all duration-300 animate-pulse-glow"
           >
             Join the Waitlist
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -72,7 +72,7 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
         </div>
 
         {/* Key Stats Bar */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in-up delay-500">
+        <div className="mt-10 sm:mt-16 grid grid-cols-3 gap-3 sm:gap-6 max-w-3xl mx-auto animate-fade-in-up delay-500">
           {[
             { value: "$1.04B", label: "Market Size" },
             { value: "95%", label: "WhatsApp Penetration" },
@@ -80,13 +80,13 @@ const HeroSection = ({ onPitchDeck, onWaitlist }) => {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-6 py-5 text-center"
+              className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl px-3 sm:px-6 py-4 sm:py-5 text-center"
               data-testid={`hero-stat-${stat.label.toLowerCase().replace(/\s/g, "-")}`}
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#C8622A]" style={{ fontFamily: "Montserrat" }}>
+              <div className="text-lg sm:text-3xl font-extrabold text-[#C8622A]" style={{ fontFamily: "Montserrat" }}>
                 {stat.value}
               </div>
-              <div className="text-white/70 text-sm mt-1">{stat.label}</div>
+              <div className="text-white/70 text-xs sm:text-sm mt-1 leading-tight">{stat.label}</div>
             </div>
           ))}
         </div>
