@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { X, FileText, CheckCircle, Loader2 } from "lucide-react";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "";
-const API = `${BACKEND_URL}/api`;
 
 const reasonOptions = [
   { value: "investor", label: "I'm an investor looking at opportunities" },
@@ -44,6 +40,12 @@ const PitchDeckModal = ({ open, onClose }) => {
     setError("");
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.full_name || !form.email || !form.request_reason || !form.more_about_interest) {
@@ -53,7 +55,11 @@ const PitchDeckModal = ({ open, onClose }) => {
     setLoading(true);
     setError("");
     try {
-      await axios.post(`${API}/pitch-deck-request`, form);
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "pitch-deck-request", ...form }),
+      });
       setSuccess(true);
     } catch (err) {
       setError("Something went wrong. Please try again.");

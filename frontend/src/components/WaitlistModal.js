@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { X, ArrowRight, CheckCircle, Loader2, Lock } from "lucide-react";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "";
-const API = `${BACKEND_URL}/api`;
 
 const WaitlistModal = ({ open, onClose }) => {
   const [form, setForm] = useState({
@@ -22,6 +18,12 @@ const WaitlistModal = ({ open, onClose }) => {
     setError("");
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.full_name || !form.email || !form.phone || !form.why_mealtap) {
@@ -31,7 +33,11 @@ const WaitlistModal = ({ open, onClose }) => {
     setLoading(true);
     setError("");
     try {
-      await axios.post(`${API}/waitlist-request`, form);
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "waitlist-request", ...form }),
+      });
       setSuccess(true);
     } catch (err) {
       setError("Something went wrong. Please try again.");
